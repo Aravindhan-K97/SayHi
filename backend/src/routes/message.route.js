@@ -4,9 +4,9 @@
 
     const router = express.Router();
 
-    router.get("/users", protectRoute, getUsersForSidebar);
-    router.get("/:id", protectRoute, getMessages);
+router.get("/messages/:id", protectRoute, getMessages);     // renamed
+router.post("/messages/send/:id", protectRoute, sendMessage); // renamed
+router.get("/users", protectRoute, getUsersForSidebar);
 
-    router.post("/send/:id", protectRoute, sendMessage);
 
     export default router;
